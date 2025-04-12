@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+    <link rel="stylesheet" href="/style.css">
+    <title>Contact Us</title>
+    <style>
+     body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #fff;
+            color: #333;
+        }
+
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+           
+        }
+
+        .contact-left {
+            flex: 1;
+            padding-right: 20px;
+        }
+
+        .contact-left .contactUs {
+            font-size: 2.5rem;;
+            margin-bottom: 20px;
+            margin-top: 50px;
+         }
+
+        .contact-left p {
+            font-size: 1.5rem;
+            line-height: 2.2rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-left .info {
+            margin-bottom: 20px;
+        }
+
+        .contact-left .info div h1 {
+            margin-bottom: 10px;
+            font-size: 20px;
+            font-style: oblique;
+            margin-top: 20px;
+        }
+
+        .contact-left .info div p {
+            margin: 0;
+            font-size: 17px;
+            color: #555;
+            margin-left: 45px;
+        }
+
+        .contact-left .info div i {
+            margin-right: 10px;
+            color: #f8c300;
+        }
+
+        .contact-left .quote {
+            font-style: italic;
+            font-size: 2.3rem;
+            color: #555;
+            margin-top: 25px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            line-height: 40px;
+        }
+        .contact-left .QuoteCaption{
+            font-style: italic;
+            font-size: 15px;
+            color: #555;
+            margin-left: 20rem;
+        }
+        .contact-right {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-right img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+
+        .contact-form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form input,
+        .contact-form textarea,
+        .contact-form button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: #999;
+        }
+
+        .contact-form button {
+            background-color: #000;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: #333;
+        }
+
+        @media (max-width: 768px) {
+            .contact-container {
+                flex-direction: column;
+            }
+
+            .contact-left {
+                padding-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .contact-right img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+        <!-- Floating Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="/index.html">Malitha Srilanka Tours</a>
+            </div>
+            <ul class="nav-links">
+                <li><a class="active" href="/index.html">Home</a></li>
+                <li><a href="/pages/tour.html">Tours</a></li>
+                <li><a href="/pages/gallery.html">Gallery</a></li>
+                <li><a href="/pages/about.html">About</a></li>
+                <li><a href="/pages/contact.html">Contact</a></li>
+            </ul>
+            <div class="bx bx-menu" id="menu-icon"></div>
+    </nav>
+    
+    <div class="contact-container">
+        <!-- Left Section -->
+        <div class="contact-left">
+            <h1 class="contactUs">Contact Us</h1>
+            <p>We'd love to help you plan your next adventure! Reach out to us anytime.</p>
+            <div class="info">
+                <div><h1><i class="fas fa-map-marker-alt"></i>Our Address:</h1>
+                <p> 123 Wander St. Adventure City, Colombo.</p></div>
+                <div><h1><i class="fas fa-phone"></i>Phone:</h1>
+                <p> +94 11 234 5678</p>
+                <p> +94 11 234 5678</p></div>
+                <div><h1><i class="fas fa-envelope"></i>Email:</h1>
+                <p> malithaleshanthabrew@gmail.com</p></div>
+            </div>
+            <p class="quote">"Wherever You Dream, <br>We Take You There."</p><p class="QuoteCaption">~Malitha Sri Lanka Tours~</p>
+        </div>
+
+        <!-- Right Section -->
+        <!-- <div class="contact-right">
+            <img src="/images/ella.jpg" alt="Contact Us">
+            <form action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="9f673eef-4d4f-414e-8336-1ab20cda4a3a">
+                <div style="display: flex; gap: 10px;">
+                    <input type="text" name="First name" required>
+                    <input type="text" name="Last name" required>
+                </div>
+                <input type="email" name="email" required>
+                <textarea rows="5" placeholder="Your Message" name="message" required ></textarea>
+                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                <button type="submit">Submit</button>
+            </form>
+        </div> -->
+        <div class="contact-right">
+            <img src="/images/ella.jpg" alt="Contact Us">
+            <div class="contact-form">
+                <form action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="subject" value="New Submission from your website">
+                    <input type="hidden" name="access_key" value="9f673eef-4d4f-414e-8336-1ab20cda4a3a">
+                    <div style="display: flex; gap: 10px;">
+                        <input type="text" placeholder="First name" name="First name" required>
+                        <input type="text" placeholder="Last name" name="Last name" required>
+                    </div>
+                    <input type="email" placeholder="Email" name="email" required>
+                    <textarea rows="5" placeholder="Your Message" name="message" required ></textarea>
+                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+        
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Company Info -->
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <h3>Malitha Srilanka Tours</h3>
+                    </div>
+                    <p class="footer-description">Your trusted partner for unforgettable Sri Lankan adventures since 2020. We specialize in creating personalized travel experiences that showcase the best of our beautiful island.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="TripAdvisor"><i class="fab fa-tripadvisor"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="#"><i class="fas fa-umbrella-beach"></i> Tours</a></li>
+                        <li><a href="#"><i class="fas fa-info-circle"></i> About Us</a></li>
+                        <li><a href="#"><i class="fas fa-map-marked-alt"></i> Destinations</a></li>
+                        <li><a href="#"><i class="fas fa-star"></i> Reviews</a></li>
+                        <li><a href="#"><i class="fas fa-envelope"></i> Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="footer-column">
+                    <h4>Contact Information</h4>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <span>Our Address</span>
+                                <p>123 Wander St. Adventure City,<br>Colombo, Sri Lanka</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <span>Office Hours</span>
+                                <p>Monday-Friday 9:00 am to 6:00 pm</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; 2023 Malitha Srilanka Tours. All Rights Reserved.</p>
+                </div>
+                <div class="developer">
+                    <p>Created by <a href="#" target="_blank">Syndicate IT Solutions</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="/script.js"></script>
+</body>
+</html>

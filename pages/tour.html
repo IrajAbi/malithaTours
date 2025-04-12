@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+
+    <title>Tours</title>
+    <style>
+        .page-header {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/ella.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-bottom: 60px;
+        }
+        
+        .page-title {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        
+        .page-subtitle {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+        }
+        
+        .tours-container {
+            padding: 0 0 80px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .tours-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .tours-grid .tour-card {
+            margin: 0 auto;
+            max-width: 350px;
+            width: 100%;
+        }
+        
+        /* Filter section */
+        .tour-filters {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .filter-title {
+            font-size: 1.3rem;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .filter-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            color: #333;
+        }
+        
+        .filter-option {
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+        
+        .filter-option:hover, .filter-option.active {
+            background-color: #f8c300;
+            border-color: #f8c300;
+            color: #333;
+        }
+
+        .navbar-spacer {
+            height: 100px;
+        }
+        
+        .tour-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 1100px) {
+            .tours-grid {
+                grid-template-columns: repeat(2, 1fr); 
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .page-header {
+                height: 40vh;
+            }
+            
+            .page-title {
+                font-size: 2.2rem;
+            }
+            
+            .tours-grid {
+                grid-template-columns: 1fr; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="/index.html">Malitha Srilanka Tours</a>
+            </div>
+            <ul class="nav-links">
+                <li><a class="active" href="/index.html">Home</a></li>
+                <li><a href="/pages/tour.html">Tours</a></li>
+                <li><a href="/pages/gallery.html">Gallery</a></li>
+                <li><a href="/pages/about.html">About</a></li>
+                <li><a href="/pages/contact.html">Contact</a></li>
+            </ul>
+            <div class="bx bx-menu" id="menu-icon"></div>
+        </div>
+    </nav>
+    
+    <!-- Navbar spacer
+    <div class="navbar-spacer"></div> -->
+    
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="header-content">
+            <h1 class="page-title animate-me" >Our Sri Lanka Tours</h1>
+            <p class="page-subtitle">Discover the perfect adventure for your Sri Lankan journey</p>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+        <div class="tour-container">
+            <!-- Tour Filters -->
+            <div class="tour-filters">
+                <h3 class="filter-title">Filter Tours By:</h3>
+                <div class="filter-options">
+                    <div class="filter-option active">All Tours</div>
+                    <div class="filter-option">Cultural</div>
+                    <div class="filter-option">Adventure</div>
+                    <div class="filter-option">Wildlife</div>
+                    <div class="filter-option">Beach</div>
+                    <div class="filter-option">Short Trips</div>
+                </div>
+            </div>
+            
+            <!-- Tours Grid -->
+            <div class="tours-container">
+                <div class="tours-grid">
+                    <!-- Sri Lanka Cultural and Nature Tour -->
+                    <div class="tour-card">
+                        <div class="tour-image">
+                            <img src="../images/ella.jpg" alt="Sri Lanka Cultural and Nature Tour">
+                            <div class="tour-duration"><i class="fas fa-clock"></i> 8 Days</div>
+                        </div>
+                        <div class="tour-content">
+                            <h3>Sri Lanka Cultural and Nature Tour</h3>
+                            <p>Immerse yourself in Sri Lanka's rich heritage and breathtaking natural landscapes. Visit ancient temples, colonial cities, and lush tea plantations.</p>
+                            <div class="tour-features">
+                                <span><i class="fas fa-map-marker-alt"></i> Sigiriya, Kandy, Ella, Mirissa</span>
+                                <span><i class="fas fa-users"></i> Max 12 people</span>
+                            </div>
+                            <a href="#" class="btn-tour">View Details</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Sri Lanka Adventure and Wildlife Tour -->
+                    <div class="tour-card">
+                        <div class="tour-image">
+                            <img src="../images/nuwaraeliya.jpg" alt="Sri Lanka Adventure and Wildlife Tour">
+                            <div class="tour-duration"><i class="fas fa-clock"></i> 10 Days</div>
+                        </div>
+                        <div class="tour-content">
+                            <h3>Sri Lanka Adventure and Wildlife Tour</h3>
+                            <p>Experience thrilling adventures and encounter exotic wildlife in their natural habitats. Safari drives, hiking, and water activities await.</p>
+                            <div class="tour-features">
+                                <span><i class="fas fa-map-marker-alt"></i> Negombo, Dambulla, Kandy, Ella, Yala</span>
+                                <span><i class="fas fa-users"></i> Max 10 people</span>
+                            </div>
+                            <a href="#" class="btn-tour">View Details</a>
+                        </div>
+                    </div>
+                    <!-- Sri Lanka Grand Tour -->
+                    <div class="tour-card">
+                        <div class="tour-image">
+                            <img src="../images/sigiriya.jpg" alt="Sri Lanka Grand Tour">
+                            <div class="tour-duration"><i class="fas fa-clock"></i> 14 Days</div>
+                        </div>
+                        <div class="tour-content">
+                            <h3>Sri Lanka Grand Tour</h3>
+                            <p>The ultimate Sri Lankan experience covering all major highlights. Culture, wildlife, beaches, and highlands in one comprehensive journey.</p>
+                            <div class="tour-features">
+                                <span><i class="fas fa-map-marker-alt"></i> Island-wide coverage</span>
+                            </div>
+                            <a href="#" class="btn-tour">View Details</a>
+                        </div>
+                    </div>
+                    <!-- Sri Lanka Highlights Tour -->
+                    <div class="tour-card">
+                        <div class="tour-image">
+                            <img src="./images/mission.jpg" alt="Sri Lanka Highlights Tour">
+                            <div class="tour-duration"><i class="fas fa-clock"></i> 6 Days</div>
+                        </div>
+                        <div class="tour-content">
+                            <h3>Sri Lanka Highlights Tour</h3>
+                            <p>Perfect for travelers with limited time. Experience the essential must-see attractions and activities across Sri Lanka's most iconic locations.</p>
+                            <div class="tour-features">
+                                <span><i class="fas fa-map-marker-alt"></i> Colombo, Kandy, Polonnaruwa</span>
+                                <span><i class="fas fa-users"></i> Max 15 people</span>
+                            </div>
+                            <a href="#" class="btn-tour">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Company Info -->
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <h3>Malitha Srilanka Tours</h3>
+                    </div>
+                    <p class="footer-description">Your trusted partner for unforgettable Sri Lankan adventures since 2020. We specialize in creating personalized travel experiences that showcase the best of our beautiful island.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="TripAdvisor"><i class="fab fa-tripadvisor"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="#"><i class="fas fa-umbrella-beach"></i> Tours</a></li>
+                        <li><a href="#"><i class="fas fa-info-circle"></i> About Us</a></li>
+                        <li><a href="#"><i class="fas fa-map-marked-alt"></i> Destinations</a></li>
+                        <li><a href="#"><i class="fas fa-star"></i> Reviews</a></li>
+                        <li><a href="#"><i class="fas fa-envelope"></i> Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="footer-column">
+                    <h4>Contact Information</h4>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <span>Our Address</span>
+                                <p>123 Wander St. Adventure City,<br>Colombo, Sri Lanka</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <span>Office Hours</span>
+                                <p>Monday-Friday 9:00 am to 6:00 pm</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; 2023 Malitha Srilanka Tours. All Rights Reserved.</p>
+                </div>
+                <div class="developer">
+                    <p>Created by <a href="#" target="_blank">Syndicate IT Solutions</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
+        <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+        <script src="/script.js"></script>
+</body>
+</html>

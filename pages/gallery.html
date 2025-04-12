@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+
+    <title>Gallery</title>
+    <style>
+        
+        /* Gallery Container */
+        .gallery-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 80px;
+        }
+        
+        /* Gallery Filter */
+        .gallery-filters {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .filter-title {
+            font-size: 1.3rem;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .filter-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            color: #333;
+        }
+        
+        .filter-option {
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+        
+        .filter-option:hover, .filter-option.active {
+            background-color: #f8c300;
+            border-color: #f8c300;
+            color: #333;
+        }
+        
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 4 columns */
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            aspect-ratio: 1/1; /* Square aspect ratio */
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+            color: white;
+            padding: 15px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        
+        .gallery-overlay h3 {
+            margin: 0 0 5px;
+            font-size: 1.1rem;
+        }
+        
+        .gallery-overlay p {
+            margin: 0;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+            gap: 10px;
+        }
+        
+        .pagination-item {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: #f5f5f5;
+            color: #333;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .pagination-item:hover, .pagination-item.active {
+            background-color: #f8c300;
+            color: #333;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 1100px) {
+            .gallery-grid {
+                grid-template-columns: repeat(3, 1fr); /* 3 columns on medium screens */
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .page-header {
+                height: 40vh;
+            }
+            
+            .page-title {
+                font-size: 2.2rem;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr); /* 2 columns on small screens */
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .gallery-grid {
+                grid-template-columns: 1fr; /* 1 column on very small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="/index.html">Malitha Srilanka Tours</a>
+            </div>
+            <ul class="nav-links">
+                <li><a class="active" href="/index.html">Home</a></li>
+                <li><a href="/pages/tour.html">Tours</a></li>
+                <li><a href="/pages/gallery.html">Gallery</a></li>
+                <li><a href="/pages/about.html">About</a></li>
+                <li><a href="/pages/contact.html">Contact</a></li>
+            </ul>
+            <div class="bx bx-menu" id="menu-icon"></div>
+        </div>
+    </nav>
+    
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="header-content">
+            <h1 class="page-title">Our Sri Lanka Gallery</h1>
+            <p class="page-subtitle">Explore the beauty of Sri Lanka through our collection of stunning photographs</p>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+        <div class="gallery-container">
+            <!-- Gallery Filters -->
+            <div class="gallery-filters">
+                <h3 class="filter-title">Filter Gallery By:</h3>
+                <div class="filter-options">
+                    <div class="filter-option active">All Photos</div>
+                    <div class="filter-option">Landscapes</div>
+                    <div class="filter-option">Wildlife</div>
+                    <div class="filter-option">Cultural</div>
+                    <div class="filter-option">Beaches</div>
+                    <div class="filter-option">Adventures</div>
+                </div>
+            </div>
+            
+            <!-- Gallery Grid -->
+            <div class="gallery-grid">
+                <!-- Gallery Item 1 -->
+                <a href="../images/ella.jpg" class="gallery-item" data-lightbox="sri-lanka-gallery" data-title="Nine Arch Bridge, Ella">
+                    <img src="../images/ella.jpg" alt="Nine Arch Bridge, Ella">
+                    <div class="gallery-overlay">
+                        <h3>Nine Arch Bridge</h3>
+                        <p>Ella, Sri Lanka</p>
+                    </div>
+                </a>
+                <a href="../images/ella.jpg" class="gallery-item" data-lightbox="sri-lanka-gallery" data-title="Nine Arch Bridge, Ella">
+                    <img src="../images/ella.jpg" alt="Nine Arch Bridge, Ella">
+                    <div class="gallery-overlay">
+                        <h3>Nine Arch Bridge</h3>
+                        <p>Ella, Sri Lanka</p>
+                    </div>
+                </a>
+                <a href="../images/ella.jpg" class="gallery-item" data-lightbox="sri-lanka-gallery" data-title="Nine Arch Bridge, Ella">
+                    <img src="../images/ella.jpg" alt="Nine Arch Bridge, Ella">
+                    <div class="gallery-overlay">
+                        <h3>Nine Arch Bridge</h3>
+                        <p>Ella, Sri Lanka</p>
+                    </div>
+                </a>
+                <a href="../images/ella.jpg" class="gallery-item" data-lightbox="sri-lanka-gallery" data-title="Nine Arch Bridge, Ella">
+                    <img src="../images/ella.jpg" alt="Nine Arch Bridge, Ella">
+                    <div class="gallery-overlay">
+                        <h3>Nine Arch Bridge</h3>
+                        <p>Ella, Sri Lanka</p>
+                    </div>
+                </a>
+                <a href="../images/ella.jpg" class="gallery-item" data-lightbox="sri-lanka-gallery" data-title="Nine Arch Bridge, Ella">
+                    <img src="../images/ella.jpg" alt="Nine Arch Bridge, Ella">
+                    <div class="gallery-overlay">
+                        <h3>Nine Arch Bridge</h3>
+                        <p>Ella, Sri Lanka</p>
+                    </div>
+                </a>
+                <a href="../images/ella.jpg" class="gallery-item" data-lightbox="sri-lanka-gallery" data-title="Nine Arch Bridge, Ella">
+                    <img src="../images/ella.jpg" alt="Nine Arch Bridge, Ella">
+                    <div class="gallery-overlay">
+                        <h3>Nine Arch Bridge</h3>
+                        <p>Ella, Sri Lanka</p>
+                    </div>
+                </a>
+                <a href="../images/ella.jpg" class="gallery-item" data-lightbox="sri-lanka-gallery" data-title="Nine Arch Bridge, Ella">
+                    <img src="../images/ella.jpg" alt="Nine Arch Bridge, Ella">
+                    <div class="gallery-overlay">
+                        <h3>Nine Arch Bridge</h3>
+                        <p>Ella, Sri Lanka</p>
+                    </div>
+                </a>
+                <a href="../images/ella.jpg" class="gallery-item" data-lightbox="sri-lanka-gallery" data-title="Nine Arch Bridge, Ella">
+                    <img src="../images/ella.jpg" alt="Nine Arch Bridge, Ella">
+                    <div class="gallery-overlay">
+                        <h3>Nine Arch Bridge</h3>
+                        <p>Ella, Sri Lanka</p>
+                    </div>
+                </a>
+                <a href="../images/ella.jpg" class="gallery-item" data-lightbox="sri-lanka-gallery" data-title="Nine Arch Bridge, Ella">
+                    <img src="../images/ella.jpg" alt="Nine Arch Bridge, Ella">
+                    <div class="gallery-overlay">
+                        <h3>Nine Arch Bridge</h3>
+                        <p>Ella, Sri Lanka</p>
+                    </div>
+                </a>
+                <a href="../images/ella.jpg" class="gallery-item" data-lightbox="sri-lanka-gallery" data-title="Nine Arch Bridge, Ella">
+                    <img src="../images/ella.jpg" alt="Nine Arch Bridge, Ella">
+                    <div class="gallery-overlay">
+                        <h3>Nine Arch Bridge</h3>
+                        <p>Ella, Sri Lanka</p>
+                    </div>
+                </a>
+                
+            </div>
+        </div>
+    </main>        
+    
+
+
+    <!-- Footer Section -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <!-- Company Info -->
+            <div class="footer-column">
+                <div class="footer-logo">
+                    <h3>Malitha Srilanka Tours</h3>
+                </div>
+                <p class="footer-description">Your trusted partner for unforgettable Sri Lankan adventures since 2020. We specialize in creating personalized travel experiences that showcase the best of our beautiful island.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" aria-label="TripAdvisor"><i class="fab fa-tripadvisor"></i></a>
+                </div>
+            </div>
+            
+            <!-- Quick Links -->
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#"><i class="fas fa-umbrella-beach"></i> Tours</a></li>
+                    <li><a href="#"><i class="fas fa-info-circle"></i> About Us</a></li>
+                    <li><a href="#"><i class="fas fa-map-marked-alt"></i> Destinations</a></li>
+                    <li><a href="#"><i class="fas fa-star"></i> Reviews</a></li>
+                    <li><a href="#"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+            </div>
+            
+            <!-- Contact Info -->
+            <div class="footer-column">
+                <h4>Contact Information</h4>
+                <ul class="contact-info">
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <span>Our Address</span>
+                            <p>123 Wander St. Adventure City,<br>Colombo, Sri Lanka</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <span>Office Hours</span>
+                            <p>Monday-Friday 9:00 am to 6:00 pm</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="copyright">
+                <p>&copy; 2023 Malitha Srilanka Tours. All Rights Reserved.</p>
+            </div>
+            <div class="developer">
+                <p>Created by <a href="#" target="_blank">Syndicate IT Solutions</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+<script src="/script.js"></script>
+</body>
+</html>

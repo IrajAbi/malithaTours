@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+    <link rel="stylesheet" href="/style.css">
+    <title>About</title>
+    <style>
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background-color: #fff;
+            color: white;
+            padding: 20px;
+            text-align: left;
+            margin-bottom: 30px;
+        }
+        header h1 {
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .about-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            /* height: 25rem;    */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+           
+        }
+        .about-image img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+
+        }
+        .map-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        .map-container {
+            flex: 1;
+            min-width: 300px;
+            height: 400px;
+        }
+        .contact-text {
+            flex: 1;
+            /* min-width: 300px; */
+            padding: 20px;
+        }
+        .about-text h1,.contact-text h1 {
+            color: #f8c300;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+        .highlight {
+            color: #f8c300;
+            font-weight: bold;
+        }
+        .contact-info {
+            margin-top: 20px;
+        }
+        .contact-info p {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .contact-info i {
+            margin-right: 10px;
+            color: #f8c300;
+        }
+        @media screen and (max-width: 992px) {
+    .container {
+        padding: 15px;
+    }
+    .about-text, .about-image, .map-container, .contact-text {
+        min-width: 280px;
+    }
+    .map-container {
+        height: 350px;
+    }
+}
+
+/* For tablets and large mobile phones */
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 24px;
+    }
+    .about-section, .map-section {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .about-text, .about-image, .map-container, .contact-text {
+        width: 100%;
+        min-width: 100%;
+    }
+    .about-image {
+        order: -1; /* Places image above text on mobile */
+    }
+    .map-container {
+        height: 300px;
+    }
+    h2 {
+        font-size: 22px;
+    }
+    p {
+        font-size: 15px;
+    }
+}
+
+/* For small mobile phones */
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+    header {
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+    header h1 {
+        font-size: 20px;
+    }
+    .about-section, .map-section {
+        gap: 15px;
+        margin-bottom: 30px;
+    }
+    .map-container {
+        height: 250px;
+    }
+    .contact-text {
+        padding: 15px;
+    }
+    h2 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+    .contact-info h3 {
+        font-size: 18px;
+    }
+    .contact-info p {
+        font-size: 14px;
+    }
+}
+
+/* Navigation menu styles for future expansion */
+.nav-toggle {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 24px;
+        color: white;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+    
+    .main-nav {
+        display: none; /* Hidden by default on mobile */
+    }
+    
+    .main-nav.active {
+        display: block;
+        width: 100%;
+        background-color: #006064;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        z-index: 100;
+    }
+    
+    .main-nav ul {
+        flex-direction: column;
+    }
+    
+    .main-nav li {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+    
+    .main-nav a {
+        padding: 15px;
+        display: block;
+    }
+}
+
+/* Animation effects for smoother transitions */
+@media screen and (min-width: 769px) {
+    .about-text, .about-image, .map-container{
+        transition: all 0.3s ease;
+    }
+    
+    .about-image img:hover{
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    }
+}
+
+/* Print styles for better printing */
+@media print {
+    body {
+        background-color: white;
+    }
+    
+    header {
+        background-color: white;
+        color: #006064;
+        text-align: center;
+    }
+    
+    .map-container {
+        display: none;
+    }
+    
+    .about-section, .map-section {
+        display: block;
+    }
+    
+    .about-image, .contact-text {
+        margin: 20px 0;
+        box-shadow: none;
+    }
+    
+    .about-image img {
+        max-width: 50%;
+        margin: 0 auto;
+        display: block;
+    }
+    
+    a {
+        text-decoration: none;
+        color: #333;
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- Floating Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="/index.html">Malitha Srilanka Tours</a>
+            </div>
+            <ul class="nav-links">
+                <li><a class="active" href="/index.html">Home</a></li>
+                <li><a href="/pages/tour.html">Tours</a></li>
+                <li><a href="/pages/gallery.html">Gallery</a></li>
+                <li><a href="/pages/about.html">About</a></li>
+                <li><a href="/pages/contact.html">Contact</a></li>
+            </ul>
+            <div class="bx bx-menu" id="menu-icon"></div>
+        </div>
+    </nav>
+        <!-- Page Header -->
+        <header class="page-header">
+            <div class="header-content">
+                <h1 class="page-title">About Us</h1>
+                <p class="page-subtitle">Explore the story and mission of Malitha Sri Lanka Tours</p>
+            </div>
+        </header>
+
+    <!-- About Section -->
+      <div class="container">
+        <section class="about-section">
+            <div class="about-text">
+                <h1>Welcome to Malitha Sri Lanka Tours</h1>
+                <p>Founded in 2010, <span class="highlight">Malitha Sri Lanka Tours</span> is a premier travel company specializing in authentic Sri Lankan experiences. Our passion for showcasing the beauty and culture of our island paradise drives everything we do.</p>
+                
+                <p>With over a decade of experience, our team of expert local guides takes pride in crafting personalized journeys that reveal both the iconic landmarks and hidden gems of Sri Lanka. From the ancient ruins of Anuradhapura to the pristine beaches of Mirissa, we ensure every traveler experiences the true essence of our country.</p>
+                
+                <p>What sets us apart is our commitment to sustainable tourism practices and deep connections with local communities. We believe in travel that not only creates unforgettable memories for our guests but also positively impacts the places we visit.</p>
+                
+                <p>Whether you're seeking adventure, relaxation, wildlife encounters, or cultural immersion, Malitha Sri Lanka Tours promises an authentic experience tailored to your preferences, all delivered with our signature Sri Lankan hospitality.</p>
+            </div>
+            <div class="about-image">
+                <img src="/images/mission.jpg" alt="Sri Lankan landscape with traditional stilt fishermen at sunset">
+            </div>
+        </section>
+
+        <section class="map-section">
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4047271.2999147683!2d78.46146967450353!3d7.851730318521068!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2593cf65a1e9d%3A0xe13da4b400e2d38c!2sSri%20Lanka!5e0!3m2!1sen!2sus!4v1712293956553!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="contact-text">
+                <h1>Our Story & Mission</h1>
+                <p>Malitha Sri Lanka Tours was born from a deep love for our homeland and a desire to share its wonders with travelers from around the world. What began as a small family operation has grown into a trusted name in Sri Lankan tourism, while still maintaining our personal touch and attention to detail.</p>
+                
+                <p>Our mission is simple: to provide authentic, responsible travel experiences that showcase the best of Sri Lanka while preserving its natural beauty and cultural heritage for generations to come.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Company Info -->
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <h3>Malitha Srilanka Tours</h3>
+                    </div>
+                    <p class="footer-description">Your trusted partner for unforgettable Sri Lankan adventures since 2020. We specialize in creating personalized travel experiences that showcase the best of our beautiful island.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="TripAdvisor"><i class="fab fa-tripadvisor"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="#"><i class="fas fa-umbrella-beach"></i> Tours</a></li>
+                        <li><a href="#"><i class="fas fa-info-circle"></i> About Us</a></li>
+                        <li><a href="#"><i class="fas fa-map-marked-alt"></i> Destinations</a></li>
+                        <li><a href="#"><i class="fas fa-star"></i> Reviews</a></li>
+                        <li><a href="#"><i class="fas fa-envelope"></i> Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="footer-column">
+                    <h4>Contact Information</h4>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <span>Our Address</span>
+                                <p>123 Wander St. Adventure City,<br>Colombo, Sri Lanka</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <span>Office Hours</span>
+                                <p>Monday-Friday 9:00 am to 6:00 pm</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; 2023 Malitha Srilanka Tours. All Rights Reserved.</p>
+                </div>
+                <div class="developer">
+                    <p>Created by <a href="#" target="_blank">Syndicate IT Solutions</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="/script.js"></script>
+</body>
+</html>

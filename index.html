@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+    <title>Travel Agency</title>
+</head>
+<body>
+    <!-- Floating Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="/index.html">Malitha Srilanka Tours</a>
+            </div>
+            <ul class="nav-links">
+                <li><a class="active" href="/index.html">Home</a></li>
+                <li><a href="/pages/tour.html">Tours</a></li>
+                <li><a href="/pages/gallery.html">Gallery</a></li>
+                <li><a href="/pages/about.html">About</a></li>
+                <li><a href="/pages/contact.html">Contact</a></li>
+            </ul>
+            <div class="bx bx-menu" id="menu-icon"></div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section with Video Background -->
+    <div class="hero">
+        <video autoplay muted loop id="background-video">
+            <source src="./videos/vid.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-text">
+            <h1>Malitha Srilanka Tours</h1>
+            <p>Explore the beauty of Sri Lanka with us!</p>
+            <a href="#" class="btn">Book Now</a>
+        </div>
+    </div>
+
+<!-- Our Services Section -->
+<section class="services">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="animate-me">Our Services</h2>
+            <p>Professional transportation and travel solutions for your convenience</p>
+        </div>
+        
+        <div class="services-grid">
+            <!-- Shuttle Service -->
+            <div class="service-card" data-tilt data-tilt-glare data-tilt-max-glare="0.3">
+                <div class="service-icon">
+                    <i class="fas fa-shuttle-van"></i>
+                </div>
+                <h3>Shuttle Service</h3>
+                <p>Reliable and comfortable shuttle services for groups and individuals across Sri Lanka.</p>
+            </div>
+            
+            <!-- Corporate Transport -->
+            <div class="service-card" data-tilt data-tilt-glare data-tilt-max-glare="0.3">
+                <div class="service-icon">
+                    <i class="fas fa-building"></i>
+                </div>
+                <h3>Corporate Transport Solutions</h3>
+                <p>Professional transportation services tailored for business needs and corporate events.</p>
+            </div>
+            
+            <!-- Local Holidays Transport -->
+            <div class="service-card" data-tilt data-tilt-glare data-tilt-max-glare="0.3">
+                <div class="service-icon">
+                    <i class="fas fa-car"></i>
+                </div>
+                <h3>Transport Solutions for Local Holidays</h3>
+                <p>Comprehensive transport arrangements for your perfect local holiday experience.</p>
+            </div>
+            
+            <!-- Airport Transfer -->
+            <div class="service-card" data-tilt data-tilt-glare data-tilt-max-glare="0.3">
+                <div class="service-icon">
+                    <i class="fas fa-plane"></i>
+                </div>
+                <h3>Airport Transfer Service</h3>
+                <p>Punctual and reliable airport pickup and drop-off services.</p>
+            </div>
+            
+            <!-- Train Ticket -->
+            <div class="service-card" data-tilt data-tilt-glare data-tilt-max-glare="0.3">
+                <div class="service-icon">
+                    <i class="fas fa-train"></i>
+                </div>
+                <h3>Train Ticket Reservation</h3>
+                <p>Hassle-free train ticket booking service for scenic rail journeys across Sri Lanka.</p>
+            </div>
+            
+            <!-- Hotel Booking -->
+            <div class="service-card" data-tilt data-tilt-glare data-tilt-max-glare="0.3">
+                <div class="service-icon">
+                    <i class="fas fa-hotel"></i>
+                </div>
+                <h3>Hotel Bookings</h3>
+                <p>Expert assistance in finding and booking the perfect accommodation for your stay.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Destinations Section -->
+<section class="destinations">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="animate-me">Featured Destinations</h2>
+            <p>Discover the most breathtaking locations in Sri Lanka</p>
+        </div>
+        
+        <div class="destinations-grid">
+            <!-- Ella -->
+            <div class="destination-card" data-tilt data-tilt-glare data-tilt-max-glare="0.3">
+                <div class="destination-img">
+                    <img src="./images/ella.jpg" alt="Ella, Sri Lanka">
+                </div>
+                <div class="destination-content">
+                    <h3>Ella</h3>
+                    <p>A picturesque mountain village with stunning views, famous Nine Arch Bridge, and hiking trails.</p>
+                    <div class="destination-features">
+                        <span><i class="fas fa-mountain"></i> Mountains</span>
+                        <span><i class="fas fa-hiking"></i> Hiking</span>
+                        <span><i class="fas fa-train"></i> Scenic Railway</span>
+                    </div>
+                    <a href="#" class="btn-outline">Explore Ella</a>
+                </div>
+            </div>
+            
+            <!-- Nuwara Eliya -->
+            <div class="destination-card" data-tilt data-tilt-glare data-tilt-max-glare="0.3">
+                <div class="destination-img">
+                    <img src="./images/nuwaraeliya.jpg" alt="Nuwara Eliya, Sri Lanka">
+                </div>
+                <div class="destination-content">
+                    <h3>Nuwara Eliya</h3>
+                    <p>Known as "Little England," featuring tea plantations, colonial architecture, and cool climate.</p>
+                    <div class="destination-features">
+                        <span><i class="fas fa-leaf"></i> Tea Estates</span>
+                        <span><i class="fas fa-temperature-low"></i> Cool Climate</span>
+                        <span><i class="fas fa-golf-ball"></i> Golf Course</span>
+                    </div>
+                    <a href="#" class="btn-outline">Explore Nuwara Eliya</a>
+                </div>
+            </div>
+            
+            <!-- Sigiriya -->
+            <div class="destination-card" data-tilt data-tilt-glare data-tilt-max-glare="0.3">
+                <div class="destination-img">
+                    <img src="./images/sigiriya.jpg" alt="Sigiriya, Sri Lanka">
+                </div>
+                <div class="destination-content">
+                    <h3>Sigiriya</h3>
+                    <p>Ancient rock fortress with stunning frescoes, water gardens, and panoramic views from the summit.</p>
+                    <div class="destination-features">
+                        <span><i class="fas fa-monument"></i> UNESCO Site</span>
+                        <span><i class="fas fa-history"></i> Ancient Ruins</span>
+                        <span><i class="fas fa-mountain"></i> Rock Climbing</span>
+                    </div>
+                    <a href="#" class="btn-outline">Explore Sigiriya</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Our Mission Section -->
+<section class="mission">
+    <div class="container">
+        <div class="mission-content">
+            <div class="mission-text">
+                <h2>Our Mission: Inspiring Malitha Srilanka Tours</h2>
+                <p>At Malitha Tours, we believe travel is more than just visiting places—it's about connecting with cultures, people, and the world around us.</p>
+                <p>Our mission is to provide curated travel experiences that inspire, educate, and create lifelong memories for every adventurer.</p>
+                <p>With a passion for exploration, we strive to make every journey seamless, enriching, and unforgettable.</p>
+                
+                <div class="mission-stats">
+                    <div class="stat-item">
+                        <div class="stat-label">Founded</div>
+                        <div class="stat-value highlight">2020</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">Adventures Delivered</div>
+                        <div class="stat-value highlight">5,000+</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">Happy Travelers</div>
+                        <div class="stat-value highlight">20,000+</div>
+                    </div>
+                </div>
+                
+                <div class="learn-more">
+                    <a href="#" class="btn-learn-more">Learn More About us &gt;</a>
+                </div>
+            </div>
+            <div class="mission-image">
+                <img src="./images/mission.jpg" alt="Sri Lanka Travel Experience">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Popular Tour Packages Section -->
+<section class="tour-packages">
+    <div class="tour container">
+        <div class="section-header">
+            <h2 class="animate-me">Popular Tour Packages</h2>
+            <p>Discover our most sought-after Sri Lanka experiences</p>
+        </div>
+        <!-- Add navigation buttons
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div> -->
+        
+        <div class="swiper tour-slider">
+            <div class="swiper-wrapper">
+                <!-- Sri Lanka Cultural and Nature Tour -->
+                <div class="swiper-slide">
+                    <div class="tour-card">
+                        <div class="tour-image">
+                            <img src="./images/ella.jpg" alt="Sri Lanka Cultural and Nature Tour">
+                            <div class="tour-duration"><i class="fas fa-clock"></i> 8 Days</div>
+                        </div>
+                        <div class="tour-content">
+                            <h3>Sri Lanka Cultural and Nature Tour</h3>
+                            <p>Immerse yourself in Sri Lanka's rich heritage and breathtaking natural landscapes. Visit ancient temples, colonial cities, and lush tea plantations.</p>
+                            <div class="tour-features">
+                                <span><i class="fas fa-map-marker-alt"></i> Sigiriya, Kandy, Ella, Mirissa</span>
+                                <span><i class="fas fa-users"></i> Max 12 people</span>
+                            </div>
+                            <a href="#" class="btn-tour">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sri Lanka Adventure and Wildlife Tour -->
+                <div class="swiper-slide">
+                    <div class="tour-card">
+                        <div class="tour-image">
+                            <img src="./images/nuwaraeliya.jpg" alt="Sri Lanka Adventure and Wildlife Tour">
+                            <div class="tour-duration"><i class="fas fa-clock"></i> 10 Days</div>
+                        </div>
+                        <div class="tour-content">
+                            <h3>Sri Lanka Adventure and Wildlife Tour</h3>
+                            <p>Experience thrilling adventures and encounter exotic wildlife in their natural habitats. Safari drives, hiking, and water activities await.</p>
+                            <div class="tour-features">
+                                <span><i class="fas fa-map-marker-alt"></i> Negombo, Dambulla , Kandy, Ella, Yala</span>
+                                <span><i class="fas fa-users"></i> Max 10 people</span>
+                            </div>
+                            <a href="#" class="btn-tour">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sri Lanka Grand Tour -->
+                <div class="swiper-slide">
+                    <div class="tour-card">
+                        <div class="tour-image">
+                            <img src="./images/sigiriya.jpg" alt="Sri Lanka Grand Tour">
+                            <div class="tour-duration"><i class="fas fa-clock"></i> 14 Days</div>
+                        </div>
+                        <div class="tour-content">
+                            <h3>Sri Lanka Grand Tour</h3>
+                            <p>The ultimate Sri Lankan experience covering all major highlights. Culture, wildlife, beaches, and highlands in one comprehensive journey.</p>
+                            <div class="tour-features">
+                                <span><i class="fas fa-map-marker-alt"></i> Island-wide coverage</span>
+                                <span><i class="fas fa-users"></i> Max 8 people</span>
+                            </div>
+                            <a href="#" class="btn-tour">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sri Lanka Highlights Tour -->
+                <div class="swiper-slide">
+                    <div class="tour-card">
+                        <div class="tour-image">
+                            <img src="/images/mission.jpg" alt="Sri Lanka Highlights Tour">
+                            <div class="tour-duration"><i class="fas fa-clock"></i> 6 Days</div>
+                        </div>
+                        <div class="tour-content">
+                            <h3>Sri Lanka Highlights Tour</h3>
+                            <p>Perfect for travelers with limited time. Experience the essential must-see attractions and activities across Sri Lanka's most iconic locations.</p>
+                            <div class="tour-features">
+                                <span><i class="fas fa-map-marker-alt"></i> Colombo, Kandy, Polonnaruwa</span>
+                                <span><i class="fas fa-users"></i> Max 15 people</span>
+                            </div>
+                            <a href="#" class="btn-tour">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Add pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="testimonials">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="animate-me">What Our Travelers Say</h2>
+            <p>Authentic experiences shared by our valued customers</p>
+        </div>
+        
+        <div class="testimonials-grid">
+            <!-- Testimonial 1 -->
+            <div class="testimonial-card" data-tilt data-tilt-glare data-tilt-max-glare="0.3">
+                <div class="testimonial-profile">
+                    <div class="testimonial-avatar">
+                        <img src="./images/man.jpeg" alt="Sarah Johnson">
+                    </div>
+                    <div class="testimonial-info">
+                        <h3>Sarah Johnson</h3>
+                        <p class="testimonial-location">United Kingdom</p>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-content">
+                    <p>"Our family trip to Sri Lanka was absolutely magical! Malitha Tours arranged everything perfectly - from comfortable transportation to amazing accommodations. Our guide was knowledgeable and friendly, making our cultural tour both educational and fun. The tea plantations in Nuwara Eliya were a highlight. Highly recommend!"</p>
+                </div>
+                <div class="testimonial-tour">
+                    <span>Sri Lanka Cultural and Nature Tour</span>
+                </div>
+            </div>
+            
+            <!-- Testimonial 2 -->
+            <div class="testimonial-card" data-tilt data-tilt-glare data-tilt-max-glare="0.3">
+                <div class="testimonial-profile">
+                    <div class="testimonial-avatar">
+                        <img src="./images/man.jpeg" alt="David Chen">
+                    </div>
+                    <div class="testimonial-info">
+                        <h3>David Chen</h3>
+                        <p class="testimonial-location">Australia</p>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-content">
+                    <p>"As a wildlife photographer, I was blown away by the safari experiences arranged by Malitha Tours. We spotted elephants, leopards, and countless bird species. The guides knew exactly where to take us for the best sightings. The accommodations were comfortable and the transportation reliable. A truly unforgettable adventure!"</p>
+                </div>
+                <div class="testimonial-tour">
+                    <span>Sri Lanka Adventure and Wildlife Tour</span>
+                </div>
+            </div>
+            
+            <!-- Testimonial 3 -->
+            <div class="testimonial-card" data-tilt data-tilt-glare data-tilt-max-glare="0.3">
+                <div class="testimonial-profile">
+                    <div class="testimonial-avatar">
+                        <img src="./images/man.jpeg" alt="Maria Rodriguez">
+                    </div>
+                    <div class="testimonial-info">
+                        <h3>Maria Rodriguez</h3>
+                        <p class="testimonial-location">Spain</p>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-content">
+                    <p>"My husband and I chose the Sri Lanka Highlights Tour for our anniversary, and it exceeded all expectations! In just 5 days, we experienced so much of this beautiful country. The ancient city of Sigiriya was breathtaking, and the beaches in Galle were paradise. Malitha Tours made our special occasion truly memorable."</p>
+                </div>
+                <div class="testimonial-tour">
+                    <span>Sri Lanka Highlights Tour</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="testimonial-cta">
+            <a href="#" class="btn">Read More Reviews</a>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action Section -->
+<section class="cta-section">
+    <div class="container">
+        <div class="cta-container">
+            <div class="cta-text">
+                <h2>Reserve Your Tour Now</h2>
+                <p>Secure your spot for an unforgettable Sri Lankan adventure</p>
+            </div>
+            <div class="cta-button">
+                <a href="#" class="btn-large">Book Your Experience</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer Section -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <!-- Company Info -->
+            <div class="footer-column">
+                <div class="footer-logo">
+                    <h3>Malitha Srilanka Tours</h3>
+                </div>
+                <p class="footer-description">Your trusted partner for unforgettable Sri Lankan adventures since 2020. We specialize in creating personalized travel experiences that showcase the best of our beautiful island.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" aria-label="TripAdvisor"><i class="fab fa-tripadvisor"></i></a>
+                </div>
+            </div>
+            
+            <!-- Quick Links -->
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#"><i class="fas fa-umbrella-beach"></i> Tours</a></li>
+                    <li><a href="#"><i class="fas fa-info-circle"></i> About Us</a></li>
+                    <li><a href="#"><i class="fas fa-map-marked-alt"></i> Destinations</a></li>
+                    <li><a href="#"><i class="fas fa-star"></i> Reviews</a></li>
+                    <li><a href="#"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+            </div>
+            
+            <!-- Contact Info -->
+            <div class="footer-column">
+                <h4>Contact Information</h4>
+                <ul class="contact-info">
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <span>Our Address</span>
+                            <p>123 Wander St. Adventure City,<br>Colombo, Sri Lanka</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <span>Office Hours</span>
+                            <p>Monday-Friday 9:00 am to 6:00 pm</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="copyright">
+                <p>&copy; 2023 Malitha Srilanka Tours. All Rights Reserved.</p>
+            </div>
+            <div class="developer">
+                <p>Created by <a href="#" target="_blank">Syndicate IT Solutions</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</html>
